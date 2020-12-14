@@ -9,6 +9,7 @@ export class AppConfigService {
 
   loadAppConfig() {
     let http = this.injector.get(HttpClient);
+    console.log('Loading Env vars');
 
     return http
       .get('/assets/app-config.json')
