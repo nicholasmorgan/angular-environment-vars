@@ -1,8 +1,13 @@
 #!/bin/bash
 echo "Before assembling"
 
+echo $NPM_BUILD
+
+echo "######################" 
+
 cat /usr/libexec/s2i/assemble
 
+echo "######################" 
 
 /usr/libexec/s2i/assemble
 
