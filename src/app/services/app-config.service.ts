@@ -12,7 +12,7 @@ export class AppConfigService {
     console.log('Loading Env vars');
 
     return http
-      .get('/assets/app-config.json')
+      .get('assets/app-config.json')
       .toPromise()
       .then((data) => {
         this.appConfig = data;
