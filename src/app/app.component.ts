@@ -14,7 +14,7 @@ export class AppComponent {
   }
 
   getWarehouseDetails() {
-    const url = `/shop/stocks`;
+    const url = `${this.environment.config.url}/shop/stocks`;
     fetch(url)
       .then((r) => r.json())
       .then((j) => {
