@@ -1,3 +1,10 @@
 #!/bin/bash
 echo "Before running application"
+
+echo "######################" 
+
+cat /usr/libexec/s2i/run
+
+echo "######################" 
+
 exec /usr/libexec/s2i/run
