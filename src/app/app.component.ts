@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AppConfigService } from './services/app-config.service';
+import { catchError, map, timeout } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +9,17 @@ import { AppConfigService } from './services/app-config.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private environment: AppConfigService) {
-    console.log(this.environment.config.name);
+  constructor(private http: HttpClient, private environment: AppConfigService) {
+    this.getWarehouseDetails();
+  }
+
+  getWarehouseDetails() {
+    const url = `${this.environment.config.url}/shop/stocks`;
+    fetch(url)
+      .then((r) => r.json())
+      .then((j) => {
+        console.log(j);
+      });
   }
 
   title = 'angular-app';
