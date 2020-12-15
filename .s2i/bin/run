@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "Before running application"
 
+echo "NPM is: $NPM_RUN"
+
 echo "######################" 
 
 cat /usr/libexec/s2i/run
